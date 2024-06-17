@@ -89,6 +89,12 @@ jobs:
         node-version: 20.11.x
         cache: yarn
         cache-dependency-path: src/electron/yarn.lock
+    - name: Setup upterm session
+      uses: owenthereal/action-upterm@v1
+      with:
+        limit-access-to-actor: true
+        upterm-server: wss://electron-upterm-5a8dedcc6c26.herokuapp.com
+        ssh-known-hosts: electron-upterm-5a8dedcc6c26.herokuapp.com:443 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEEu11qMTAO8NnFH6ubRFBDCCVtcbCei8+Y4u1cz2rk+
     - name: Install Dependencies
       run: |
         cd src/electron

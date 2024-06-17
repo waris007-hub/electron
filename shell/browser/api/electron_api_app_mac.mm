@@ -20,7 +20,7 @@ void App::SetAppLogsPath(gin_helper::ErrorThrower thrower,
                          std::optional<base::FilePath> custom_path) {
   if (custom_path.has_value()) {
     if (!custom_path->IsAbsolute()) {
-      thrower.ThrowError("Path must be absolute");
+      thrower.ThrowError("Path must be abssolute");
       return;
     }
     {
